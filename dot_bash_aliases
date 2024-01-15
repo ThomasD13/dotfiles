@@ -1,0 +1,44 @@
+# Copy a directy with preserved symlinks from a ssh server
+# to local pc.
+#
+getimage() {
+	rsync -aP --delete ewtd@172.16.1.25:/home/ewtd/tisdk/build/arago-tmp-external-arm-toolchain/deploy/images/ $1
+}
+
+getimageraspberry() {
+	rsync -aP --delete ewtd@172.16.1.25:/home/ewtd/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/ $1
+}
+
+# Connect fast to Server1c VM Linux
+connectvm() {
+	ssh ewtd@172.16.1.25
+}
+
+# Connect fast to (Hardware)Server ewdt-server
+connectserver() {
+	ssh ewdt@172.16.1.150
+}
+
+# Move .tar.xz image to given directory and extract it there
+moveextractimage() {
+	mv $1 $2
+	cd $2
+	tar -xJf $1
+	rm $1
+}
+
+# Show some nice git log
+alias gitgraph='git log --all --decorate --oneline --graph'
+
+# Make gita available. Is installed per pip3. See github.com/nosarthur/gita
+alias gita="python3 -m gita"
+
+# Save git pane to a filename, for example the last 500 lines:
+# tmux-save-pane 500 > foobar.txt 
+alias tmux-save-pane='tmux capture-pane -pS -'
+
+# Starts a tmux session with our config
+alias tmux-start='tmux -f ~/dotfiles/tmux.conf'
+
+# Source the current cmaketools environment
+alias cmake-source='source ~/projects/buildcomponents/cmaketools/setenv.sh'
