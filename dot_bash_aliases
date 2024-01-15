@@ -42,3 +42,6 @@ alias tmux-start='tmux -f ~/dotfiles/tmux.conf'
 
 # Source the current cmaketools environment
 alias cmake-source='source ~/projects/buildcomponents/cmaketools/setenv.sh'
+
+# Abbreviations
+alias n="nvim"
