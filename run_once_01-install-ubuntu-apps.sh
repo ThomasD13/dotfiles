@@ -26,7 +26,7 @@ else
     fi
 fi
 
-if [ "$install_nvim" eq "true" ]
+if [ "$install_nvim" eq "true" ]; then
   mkdir -p "/opt/nvim/"
   cd /opt/nvim && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && cd -
   ln -s /opt/nvim/nvim.appimage /usr/bin/nvim
