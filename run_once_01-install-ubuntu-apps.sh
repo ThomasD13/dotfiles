@@ -39,3 +39,13 @@ if [ "$install_nvim" = true ]; then
   fi
   echo "Nvim latest version has been installed"
 fi
+
+# Install delta as diff tool for git
+install_delta=false
+command -v delta >/dev/null
+
+if [[ $? -ne 0 ]]; then
+    echo "delta is not installed"
+    wget https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb && dpkg -i git-delta_0.16.5_amd64.deb && rm git-delta_0.16.5_amd64.deb 
+fi 
+
