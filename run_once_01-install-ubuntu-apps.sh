@@ -32,7 +32,7 @@ if [ "$install_nvim" = true ]; then
   # Check if the appimage can be executed. If not, extracat the image
   /opt/nvim/nvim.appimage -v 
   if [ $? -ne 0 ]; then
-    /opt/nvim/nvim.appimage --appimage-extract
+    cd /opt/nvim && .nvim.appimage --appimage-extract && cd -
     ln -s /opt/nvim/squashfs-root/AppRun /usr/bin/nvim
   else
     ln -s /opt/nvim/nvim.appimage /usr/bin/nvim
