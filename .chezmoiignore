@@ -1,3 +1,8 @@
 # Neovim
 **/dot_git/
 **/dot_github/
+
+# Use gitconfig only on "my" working environment
+{{ if (and (ne .chezmoi.username "thomas") (ne .chezmoi.username "ewdt")) }}
+.gitconfig
+{{ end }}
