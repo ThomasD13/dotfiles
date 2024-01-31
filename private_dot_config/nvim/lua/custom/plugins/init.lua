@@ -14,5 +14,11 @@ vim.cmd([[
     augroup END
 ]])
 
+-- Adding relative line numbers
+vim.opt.relativenumber = true
+
+-- Fix the cursor in the middle of windows when scrolling
+vim.opt.scrolloff = 6
+
 return {
 }
