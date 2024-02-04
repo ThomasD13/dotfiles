@@ -52,9 +52,11 @@ dynamic_padding = false
 opacity = 1.0
 startup_mode = "Windowed"
 
+# Using 0/0 will fallback to window manager's recommended size.
+# Hint: It always spawned at full height on arch linux, despite which lines was set
 [window.dimensions]
-columns = 100
-lines = 85
+columns = 0
+lines = 0
 
 [window.padding]
 x = 0
