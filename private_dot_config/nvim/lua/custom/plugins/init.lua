@@ -24,5 +24,8 @@ vim.opt.scrolloff = 6
 vim.keymap.set('v', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true})
 vim.keymap.set('v', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true})
 
+-- Remap for easier window control access
+local map = vim.api.nvim_set_keymap
+map('n', '<A-w>', '<C-w>', {noremap = true})
 return {
 }
