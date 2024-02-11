@@ -3,8 +3,14 @@
 --
 -- See the kickstart.nvim README for more information
 
+package.path = package.path .. ";?.lua"
+
 -- Set the blinking cursor settings
 vim.o.guicursor = 'n-v:block,i:ver25,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250'
+
+-- Adjust the split that it makes sense
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Make sure, that when we exit nvim the previous cursor settings get restored
 vim.cmd([[
@@ -24,8 +30,16 @@ vim.opt.scrolloff = 6
 vim.keymap.set('v', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true})
 vim.keymap.set('v', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true})
 
+-- Provide function and keymap binding to show not saved changes of current buffer
+function showBufferDiff()
+vim.cmd([[w !diff % - ]])
+end
+-- ":vim.cmd([[w !diff % - ]])"
+vim.keymap.set('n', '<leader>pd', showBufferDiff, { expr = true, silent = true})
+
 -- Remap for easier window control access
+-- Mimic the tmux config here. S for vertical split, v for horizontal
 local map = vim.api.nvim_set_keymap
-map('n', '<A-w>', '<C-w>', {noremap = true})
+map('n', '<A-w>', '<C-w>', {noremap = false})
 return {
 }
