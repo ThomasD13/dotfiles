@@ -10,4 +10,4 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/completion.bash
 
 # Key bindings
 # ------------
-# source "/home/thomas/projects/fzf/shell/key-bindings.bash"
+source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/key-bindings.bash
