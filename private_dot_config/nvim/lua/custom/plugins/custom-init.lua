@@ -35,7 +35,8 @@ function showBufferDiff()
 vim.cmd([[w !diff % - ]])
 end
 -- ":vim.cmd([[w !diff % - ]])"
-vim.keymap.set('n', '<leader>pd', showBufferDiff, { expr = true, silent = true})
+vim.keymap.set('n', '<leader>pd', showBufferDiff, { expr = true, silent = true, desc = "Print diff between buffer and file"})
+
 
 -- Remap for easier window control access
 -- Mimic the tmux config here. S for vertical split, v for horizontal
