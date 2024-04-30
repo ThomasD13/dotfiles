@@ -38,9 +38,15 @@ end
 vim.keymap.set('n', '<leader>pd', showBufferDiff, { expr = true, silent = true, desc = "Print diff between buffer and file"})
 
 
--- Remap for easier window control access
--- Mimic the tmux config here. S for vertical split, v for horizontal
+-- Mimic the tmux config here. S for vertical split, v for horizontal:
+-- - Remap for easier window control access
+-- - Remap general the window control access to <A-w>.
+-- - Remap (swapping) particular "s" to "v" when entering window control access.
+--   (Bear in mind that you have to release <A-w> keys, and then press "s" or "v". 
+--   Otherwise the swapping of "s" and "v" does not work.
 local map = vim.api.nvim_set_keymap
 map('n', '<A-w>', '<C-w>', {noremap = false})
+map('n', '<C-w>s', '<C-w>v', {noremap = true})
+map('n', '<C-w>v', '<C-w>s', {noremap = true})
 return {
 }
