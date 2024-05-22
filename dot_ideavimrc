@@ -1,0 +1,90 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+" Load intellimacs scripts which setup a good base structure
+source ~/.config/clion-vim/intellimacs/spacemacs.vim
+source ~/.config/clion-vim/intellimacs/which-key.vim
+source ~/.config/clion-vim/intellimacs/major.vim
+
+" Just load the search keybinding script from extra
+source ~/.intellimacs/extra/search.vim
+source ~/.intellimacs/extra/jump.vim
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=6
+
+" Do incremental searching.
+set incsearch
+
+set clipboard=unnamedplus
+set breakindent
+set undofile
+set ignorecase
+
+set smartcase
+vnoremap <expr> <Space> <Nop>
+nnoremap <expr> <Space> <Nop>
+let mapleader = " "
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Remap for dealing with word wrap in v mode
+vnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+vnoremap <expr> j v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
+noremap <expr> j v:count == 0 ? 'gj' : 'j'
+
+ --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "300"
+
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" set vim-commentary
+
+" Activate nerdtree to navigate in directories
+Plug 'preservim/nerdtree'
+map <Leader>tc :NERDTreeToggle<CR>
+map <Leader>tt :NERDTreeFocus<CR>
+
+" Which-Key plugin
+set which-key
+" disable the timeout option
+set notimeout
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+set timeoutlen=5000
+
+map <Leader>pf <action>(FindInPath)
+map <Leader>gf <action>(ReplaceInPath)
+map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
+
+
+" This allows to use the ALT-key for mapping
+execute "set <M-l>=^el"
+
+" Map the move between windows here
+" M is the ALT-Key here.
+nnoremap <M-h>   <C-w>h
+nnoremap <M-l>   <C-w>l
+nnoremap <M-j>   <C-w>j
+nnoremap <M-k>   <C-w>k
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)

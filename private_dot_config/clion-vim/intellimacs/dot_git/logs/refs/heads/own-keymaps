@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 f1e78859c902bdf2d95e35683de1e985ad987f52 Thomas Dorsch <t.dorsch@ibgndt.de> 1716360192 +0200	branch: Created from HEAD
+f1e78859c902bdf2d95e35683de1e985ad987f52 4d547f1c36c23106355aa0fd4f38d84f3f611d00 Thomas Dorsch <t.dorsch@ibgndt.de> 1716360260 +0200	commit: Modified certain actions to my own keybindings. Make it closer to my nvim configuration.
