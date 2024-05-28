@@ -1,7 +1,7 @@
 " Execute an action. Like <M-x>
-let g:WhichKeyDesc_Leader_Space = "<leader><Space> M-x"
-nnoremap <leader><Space>    :action GotoAction<CR>
-vnoremap <leader><Space>    :action GotoAction<CR>
+" let g:WhichKeyDesc_Leader_Space = "<leader><Space> M-x"
+" nnoremap <leader><Space>    :action GotoAction<CR>
+" vnoremap <leader><Space>    :action GotoAction<CR>
 
 " Focus last buffer
 let g:WhichKeyDesc_Leader_LastBuffer = "<leader><Tab> last-buffer"

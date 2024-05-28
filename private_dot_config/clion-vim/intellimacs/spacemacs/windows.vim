@@ -2,25 +2,25 @@
 let g:WhichKeyDesc_Windows_SplitWindowRight = "<leader>w/ split-window-right"
 nnoremap <leader>w/    :action SplitVertically<CR>
 vnoremap <leader>w/    <Esc>:action SplitVertically<CR>
-let g:WhichKeyDesc_Windows_SplitWindowRightV = "<leader>wv split-window-right"
-nnoremap <M-w>v    :action SplitVertically<CR>
-vnoremap <M-w>v    <Esc>:action SplitVertically<CR>
+let g:WhichKeyDesc_Windows_SplitWindowRightV = "<leader>ws split-window-right"
+nnoremap <M-w>s    :action SplitVertically<CR>
+vnoremap <M-w>s    <Esc>:action SplitVertically<CR>
 
 " Split window below
 let g:WhichKeyDesc_Windows_SplitWindowBelow = "<leader>w- split-window-below"
 nnoremap <leader>w-    :action SplitHorizontally<CR>
 vnoremap <leader>w-    <Esc>:action SplitHorizontally<CR>
-let g:WhichKeyDesc_Windows_SplitWindowBelowS = "<leader>ws split-window-below"
-nnoremap <M-w>s    :action SplitHorizontally<CR>
-vnoremap <M-w>s    <Esc>:action SplitHorizontally<CR>
+let g:WhichKeyDesc_Windows_SplitWindowBelowS = "<leader>wv split-window-below"
+nnoremap <M-w>v    :action SplitHorizontally<CR>
+vnoremap <M-w>v    <Esc>:action SplitHorizontally<CR>
 
 " Close window
 let g:WhichKeyDesc_Windows_DeleteWindow = "<leader>wd delete-window"
 nnoremap <leader>wd    :action CloseAllEditors<CR>
 vnoremap <leader>wd    <Esc>:action CloseAllEditors<CR>
 let g:WhichKeyDesc_Windows_DeleteWindowX = "<leader>wx delete-window"
-nnoremap <M-w>c    :action CloseAllEditors<CR>
-vnoremap <M-w>c    <Esc>:action CloseAllEditors<CR>
+nnoremap <M-w>x    :action CloseAllEditors<CR>
+vnoremap <M-w>x    <Esc>:action CloseAllEditors<CR>
 
 " Focus window left
 let g:WhichKeyDesc_Windows_WindowLeftH = "<leader>wh window-left"

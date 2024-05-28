@@ -33,9 +33,9 @@ nnoremap <leader>fR    :action RenameFile<CR>
 vnoremap <leader>fR    :action RenameFile<CR>
 
 " Recent files
-let g:WhichKeyDesc_Files_Recent = "<leader>fr recent"
-nnoremap <leader>fr    :action RecentFiles<CR>
-vnoremap <leader>fr    :action RecentFiles<CR>
+let g:WhichKeyDesc_Files_Recent = "<leader><leader> recent"
+nnoremap <leader><leader>    :action RecentFiles<CR>
+vnoremap <leader><leader>    :action RecentFiles<CR>
 
 " Save all files
 let g:WhichKeyDesc_Files_SaveAll = "<leader>fS save-all"
