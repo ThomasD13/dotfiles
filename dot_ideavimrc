@@ -12,7 +12,7 @@ source ~/.config/clion-vim/intellimacs/major.vim
 " Just load the search keybinding script from extra
 source ~/.intellimacs/extra/search.vim
 source ~/.intellimacs/extra/jump.vim
-
+source ~/.intellimacs/extra/windows.vim
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
