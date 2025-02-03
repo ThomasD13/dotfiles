@@ -28,14 +28,14 @@ fi
 
 if [ "$install_nvim" = true ]; then
   mkdir -p "/opt/nvim/"
-  cd /opt/nvim && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && chmod +x nvim.appimage && cd -
+  cd /opt/nvim && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage && chmod +x nvim-linux-x86_64.appimage && cd -
   # Check if the appimage can be executed. If not, extracat the image
-  /opt/nvim/nvim.appimage -v 
+  /opt/nvim/nvim-linux-x86_64.appimage -v 
   if [ $? -ne 0 ]; then
-    cd /opt/nvim && ./nvim.appimage --appimage-extract && cd -
+    cd /opt/nvim && ./nvim-linux-x86_64.appimage --appimage-extract && cd -
     ln -s /opt/nvim/squashfs-root/AppRun /usr/bin/nvim
   else
-    ln -s /opt/nvim/nvim.appimage /usr/bin/nvim
+    ln -s /opt/nvim/nvim-linux-x86_64.appimage /usr/bin/nvim
   fi
   echo "Nvim latest version has been installed"
 fi
