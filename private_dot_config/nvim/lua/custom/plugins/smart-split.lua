@@ -1,7 +1,11 @@
 return {
   'mrjones2014/smart-splits.nvim',
+  dependencies = {
+    'pogyomo/submode.nvim',
+  },
+  -- config = function() end,
   config = function()
-    require('smart-splits').setup({
+    require('smart-splits').setup {
       -- Ignored filetypes (only while resizing)
       ignored_filetypes = {
         'nofile',
@@ -90,13 +94,39 @@ return {
       kitty_password = nil,
       -- default logging level, one of: 'trace'|'debug'|'info'|'warn'|'error'|'fatal'
       log_level = 'info',
-    })
+      persistent_resize_mode = true,
+    }
 
-    vim.keymap.set('n', '<C-w>r', require('smart-splits').start_resize_mode, { desc = 'Start resize mode' })
+    -- vim.keymap.set('n', '<C-w>r', require('smart-splits').start_resize_mode, { desc = 'Start resize mode' })
     vim.keymap.set('n', '<A-l>', require('smart-splits').move_cursor_right, { desc = 'Move right' })
     vim.keymap.set('n', '<A-h>', require('smart-splits').move_cursor_left, { desc = 'Move left' })
     vim.keymap.set('n', '<A-j>', require('smart-splits').move_cursor_down, { desc = 'Move down' })
     vim.keymap.set('n', '<A-k>', require('smart-splits').move_cursor_up, { desc = 'Move up' })
-  end,
 
+    -- Resize
+    local submode = require 'submode'
+    submode.create('WinResize', {
+      mode = 'n',
+      enter = '<C-w>r',
+      leave = { '<Esc>', 'q', '<C-c>' },
+      hook = {
+        on_enter = function()
+          vim.notify 'Use { h, j, k, l } or { <Left>, <Down>, <Up>, <Right> } to resize the window'
+        end,
+        on_leave = function()
+          vim.notify ''
+        end,
+      },
+      default = function(register)
+        register('h', require('smart-splits').resize_left, { desc = 'Resize left' })
+        register('j', require('smart-splits').resize_down, { desc = 'Resize down' })
+        register('k', require('smart-splits').resize_up, { desc = 'Resize up' })
+        register('l', require('smart-splits').resize_right, { desc = 'Resize right' })
+        register('<Left>', require('smart-splits').resize_left, { desc = 'Resize left' })
+        register('<Down>', require('smart-splits').resize_down, { desc = 'Resize down' })
+        register('<Up>', require('smart-splits').resize_up, { desc = 'Resize up' })
+        register('<Right>', require('smart-splits').resize_right, { desc = 'Resize right' })
+      end,
+    })
+  end,
 }
