@@ -56,6 +56,14 @@ Plug 'preservim/nerdtree'
 map <Leader>tc :NERDTreeToggle<CR>
 map <Leader>tt :NERDTreeFocus<CR>
 
+" Sneak plugin (s + two characters)
+Plug 'justinmk/vim-sneak'
+
+
+" Replace with Register
+Plug 'vim-scripts/ReplaceWithRegister'
+
+
 " Which-Key plugin
 set which-key
 " disable the timeout option
