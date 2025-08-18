@@ -119,4 +119,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
+
+export DOTNET_ROOT=/opt/dotnet-sdk/
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
