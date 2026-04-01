@@ -45,4 +45,11 @@ map('n', '<A-w>', '<C-w>', { noremap = false })
 map('n', '<C-w>s', '<C-w>v', { noremap = true })
 map('n', '<C-w>v', '<C-w>s', { noremap = true })
 
+-- Mapping for delete into black hole register in normal mode
+-- and replace visual selection with yanked text (unnamed register) without losing it.
+-- Example: yiw or yi" to yank some text => <leader>xiwP or <leader>xiw"P to replace.
+--                                       => visual select and <leader>x to replace.
+vim.keymap.set('n', '<leader>x', '"_d', { desc = 'Delete to black hole register' })
+vim.keymap.set('v', '<leader>x', '"_dP', { desc = 'Replace selection with yanked text' })
+
 return {}
